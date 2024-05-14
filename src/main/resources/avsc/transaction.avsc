@@ -1,0 +1,29 @@
+[
+  {
+    "name": "PersonAVSC",
+    "namespace": "br.com.source.knowledge.model.avsc",
+    "type": "record",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      }
+    ]
+  },
+
+  {
+    "name": "TransactionAVSC",
+    "namespace": "br.com.source.knowledge.model.avsc",
+    "type": "record",
+    "fields": [
+      {
+        "name": "mother",
+        "type": "PersonAVSC"
+      },
+      {
+        "name": "father",
+        "type": "PersonAVSC"
+      }
+    ]
+  }
+]

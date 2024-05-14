@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <avro.version>1.11.3</avro.version>
+    <revision>1.0-SNAPSHOT</revision>
+  </properties>
+
+  <groupId>br.com.source.knowledge.model</groupId>
+  <artifactId>source-knowledge-model-lib</artifactId>
+  <version>${revision}</version>
+  <name>Archetype - source-knowledge-model-lib</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-tools</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!--<plugin>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro-maven-plugin</artifactId>
+        <version>${avro.version}</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>schema</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/resources/avsc/</sourceDirectory>
+              <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+              <includes>
+                <include>**/*.avsc</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>-->
+
+      <plugin>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro-maven-plugin</artifactId>
+        <version>${avro.version}</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>idl-protocol</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/resources/avdl/</sourceDirectory>
+              <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+              <includes>
+                <include>**/*.avdl</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

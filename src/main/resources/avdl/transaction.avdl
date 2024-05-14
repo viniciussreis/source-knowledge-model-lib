@@ -1,0 +1,10 @@
+@namespace("br.com.source.knowledge.model.avdl")
+protocol TransactionAVDL {
+	import idl "person.avdl";
+
+	record TransactionAVDL {
+		string transactionId;
+		PersonAVDL person;
+		PersonAVDL mother;
+	}
+}

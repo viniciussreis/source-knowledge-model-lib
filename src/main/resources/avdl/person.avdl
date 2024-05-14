@@ -1,0 +1,6 @@
+@namespace("br.com.source.knowledge.model.avdl")
+protocol PersonAVDL {
+	record PersonAVDL {
+		string name;
+	}
+}
